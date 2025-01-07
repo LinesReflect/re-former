@@ -1,3 +1,18 @@
 <% content_for :title, "New user" %>
 
 <h1>New User</h1>
+
+<form action="/users" method="post" accept-charset="utf-8" data-turbo="false">
+    <input
+type="hidden"
+name="authenticity_token"
+value="<%= form_authenticity_token %>"
+>
+    <label for="email">E-mail:</label>
+    <input type="email" name="email" id="email"><br><br>
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password"><br><br>
+    <input type="submit" value="Submit">
+</form>
